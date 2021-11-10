@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Quiz</title>
+  <link type='text/css' rel='stylesheet' href='form3.css' />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans" />
+  <link href="home2_bm.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="home.html" style="text-decoration: none; color: black;">Quizzet<span>.</span></a></h1>
+      <nav id="navbar" class="navbar">
+        <ul class="navlist">
+          <li><a class="nav-link scrollto active" href="home.html"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                <path
+                  d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+              </svg>Home</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="coverview.html">C</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="cppoverview.html">C++</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="poverview.html">Python</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="joverview.html">Java</a></li>
+          <li><a class="nav-link scrollto " id="log" href="logout.php">Log-out</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="head">
+      <p style="font-size: larger;"><u> Quiz on C++ Class and object</u></p>
+      <p>Total 10 questions</p>
+    </div>
+    <div id='container'>
+      <div id='title'>
+
+      </div>
+      <br />
+      <div id='quiz'></div>
+      <div class='button' id='next'><a href='#' style="color: white;">Next</a></div>
+      <div class='button' id='prev'><a href='#' style="color: white;">Prev</a></div>
+      <div class='button' id='start'> <a href='#' style="color: white; font-size: medium;">Play again</a></div>
+      <!-- <button class='btn' id='next' style="background-color: blue; color: white;">Next</a></button>
+    		<button class='btn' id='prev' style="background-color: blue; color: white;">Prev</a></button>
+    		<button class='btn' id='start' style="background-color: green; color: white;"> Play again</a></button> -->
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
+  <div class="container py-4">
+    <div class="copyright" style="text-align: center; font-size: large; width: 100%;">
+      &copy; Copyright <strong><span>Quizzet</span></strong>. All Rights Reserved
+    </div>
+  </div>
+
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+  
+  <script>
+    (function () {
+      var questions = [
+        {
+          question: 'Q1 : Which of the following is true?',
+          choices: [" A. All objects of a class share all data members of class",
+            " B. Objects of a class do not share non-static members. Every object has its own copy.",
+            " C. Objects of a class do not share codes of non-static methods, they have their own copy",
+            " D. None of the above"],
+          correctAnswer: 1
+        }, {
+          question: 'Q2 : What is the output of following C++ program<br><br>\
+        <pre><h5>        class Empty {};\n\
+          int main()\n\
+          {\n\
+            cout << sizeof(Empty);\n\
+            return 0;\n\
+          }</pre>',
+          choices: [" A. A non-zero value",
+            " B. 0",
+            " C. Compiler Error",
+            " D. Runtime Error"],
+          correctAnswer: 0
+        }, {
+          question: 'Q3 : What is the output of following program?<br><br>\
+<pre><h5>        class Test {\n\
+            int x; \n\
+          };\n\
+          int main()\n\
+          {\n\
+            Test t;\n\
+            cout << t.x;\n\
+            return 0;\n\
+          }</pre>',
+          choices: [" A. 0",
+            " B. Runtime Error",
+            " C. Garbage Value",
+            " D. Compiler Error"],
+          correctAnswer: 3
+        },
+        {
+          question: 'Q4 : Assume that an integer and a pointer each takes 4 bytes. Also, assume that there is no alignment in objects. Predict the output following program.<br><br>\
+        <pre><h5>        class Test\n\
+          {\n\
+              static int x;\n\
+              int *ptr;\n\
+              int y;\n\
+          };\n\n\
+          int main()\n\
+          {\n\
+              Test t;\n\
+              cout << sizeof(t) << \" \";\n\
+              cout << sizeof(Test *);\n\
+          }</pre>',
+          choices: [" A. 12 4",
+            " B. 12 12",
+            " C. 8 4",
+            " D. 8 8"],
+          correctAnswer: 2
+        },
+        {
+          question: 'Q5 : A member function can always access the data in __________ , (in C++).',
+          choices: [" A. the class of which it is member",
+            " B. the object of which it is a member",
+            " C. the public part of its class",
+            " D. the private part of its class"],
+          correctAnswer: 0
+        },
+        {
+          question: 'Q6 : Which of the following is not correct for virtual function in C++ ?',
+          choices: [" A. Must be declared in public section of class.",
+            " B. Virtual function can be static.",
+            " C. Virtual function should be accessed using pointers.",
+            " D. Virtual function is defined in base class."],
+          correctAnswer: 1
+        },
+        {
+          question: 'Q7 : Which of the following cannot be passed to a function in C++ ?',
+          choices: [" A. Constant",
+            " B. Structure",
+            " C. Array",
+            " D. Header file"],
+          correctAnswer: 3
+        },
+        {
+          question: "Q8 : Which of the following is not a correct statement?",
+          choices: [" A. Every class containing abstract method must be declared abstract.",
+            " B. Abstract class can directly be initiated with ‘new’ operator.",
+            " C. Abstract class can be initiated.",
+            " D. Abstract class does not contain any definition of implementation."],
+          correctAnswer: 1
+        },
+        {
+          question: "Q9 : Which of the following, in C++, is inherited in a derived class from base class ?",
+          choices: [" A. constructor",
+            " B. destructor",
+            " C. data members",
+            " D. virtual methods"],
+          correctAnswer: 2
+        }, {
+          question: 'Q10 : Which of the following is not a member of class?',
+          choices: [" A. Static function",
+            " B. Friend function",
+            ' C. Const function',
+            " D. Virtual function"],
+          correctAnswer: 1
+        }];
+
+      var questionCounter = 0; //Tracks question number
+      var selections = []; //Array containing user choices
+      var quiz = $('#quiz'); //Quiz div object
+
+
+      // Display initial question
+      displayNext();
+
+
+      // Click handler for the 'next' button
+      $('#next').on('click', function (e) {
+
+        e.preventDefault();
+
+        // Suspend click listener during fade animation
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        choose();
+
+        // If no user selection, progress is stopped
+        if (isNaN(selections[questionCounter])) {
+          alert('please make a selection');
+        } else {
+          questionCounter++;
+          displayNext();
+        }
+      });
+
+      // Click handler for the 'prev' button
+      $('#prev').on('click', function (e) {
+
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        choose();
+        questionCounter--;
+        displayNext();
+      });
+
+      // Click handler for the 'Start Over' button
+      $('#start').on('click', function (e) {
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        questionCounter = 0;
+        selections = [];
+        displayNext();
+        $('#start').hide();
+      });
+
+      // Animates buttons on hover
+      $('.button').on('mouseenter', function () {
+        $(this).addClass('active');
+      });
+      $('.button').on('mouseleave', function () {
+        $(this).removeClass('active');
+      });
+
+      // Creates and returns the div that contains the questions and 
+      // the answer selections
+      function createQuestionElement(index) {
+        var qElement = $('<div>', {
+          id: 'question'
+        });
+
+        var header = $('<h3 style="margin-bottom : 1.5rem">Question ' + (index + 1) + ' of ' + (questions.length) + ':</h3>');
+        qElement.append(header);
+
+        var question = $('<h5 style="margin-bottom : 1.5rem">').append(questions[index].question);
+        qElement.append(question);
+
+        var radioButtons = createRadios(index);
+        qElement.append(radioButtons);
+
+        return qElement;
+      }
+
+      // Creates a list of the answer choices as radio inputs
+      function createRadios(index) {
+        var radioList = $('<ul>');
+        var item;
+        var input = '';
+        for (var i = 0; i < questions[index].choices.length; i++) {
+          item = $('<li>');
+          input = '<input style="cursor : pointer;" type="radio" name="answer" value=' + i + ' />';
+          input += questions[index].choices[i];
+          item.append(input);
+          radioList.append(item);
+        }
+        return radioList;
+      }
+
+      // Reads the user selection and pushes the value to an array
+      function choose() {
+        selections[questionCounter] = +$('input[name="answer"]:checked').val();
+      }
+
+      // Displays next requested element
+      function displayNext() {
+
+        quiz.fadeOut(function () {
+          $('#question').remove();
+
+          if (questionCounter < questions.length) {
+            var nextQuestion = createQuestionElement(questionCounter);
+            quiz.append(nextQuestion).fadeIn();
+            if (!(isNaN(selections[questionCounter]))) {
+              $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
+            }
+
+            // Controls display of 'prev' button
+            if (questionCounter === 1) {
+              $('#prev').show();
+            } else if (questionCounter === 0) {
+
+              $('#prev').hide();
+              $('#next').show();
+            }
+          } else {
+            var scoreElem = displayScore();
+            quiz.append(scoreElem).fadeIn();
+            $('#next').hide();
+            $('#prev').hide();
+            $('#start').show();
+          }
+        });
+      }
+
+      // Computes score and returns a paragraph element to be displayed
+      function displayScore() {
+        var score = $('<p>', { id: 'question' });
+
+        var numCorrect = 0;
+        for (var i = 0; i < selections.length; i++) {
+          if (selections[i] === questions[i].correctAnswer) {
+            numCorrect++;
+          }
+        }
+        // showscore.innerHtml = 'You got ' + numCorrect + ' questions out of ' +questions.length + ' right!!!' + '<button> Play again</button>'
+
+        score.append('<h5>Your score ' + numCorrect + ' out of ' +
+          questions.length + '</h5>');
+        return score;
+      }
+    })();
+  </script>
+</body>
+
+</html>

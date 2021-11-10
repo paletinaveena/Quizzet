@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Python Quiz </title>
+  <link type='text/css' rel='stylesheet' href='form3.css' />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans" />
+  <link href="home2_bm.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="home.html" style="text-decoration: none; color: black;">Quizzet<span>.</span></a></h1>
+      <nav id="navbar" class="navbar">
+        <ul class="navlist">
+          <li><a class="nav-link scrollto active" href="home.html"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                <path
+                  d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+              </svg>Home</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="coverview.html">C</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="cppoverview.html">C++</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="poverview.html">Python</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="joverview.html">Java</a></li>
+          <li><a class="nav-link scrollto " id="log" href="logout.php">Log-out</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="head">
+      <p style="font-size: larger;"><u> Quiz on Python dictionary</u></p>
+      <p>Total 10 questions</p>
+    </div>
+    <div id='container'>
+      <div id='title'>
+
+      </div>
+      <br />
+      <div id='quiz'></div>
+      <div class='button' id='next'><a href='#' style="color: white;">Next</a></div>
+      <div class='button' id='prev'><a href='#' style="color: white;">Prev</a></div>
+      <div class='button' id='start'> <a href='#' style="color: white; font-size: medium;">Play again</a></div>
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
+  <div class="container py-4">
+    <div class="copyright" style="text-align: center; font-size: large; width: 100%;">
+      &copy; Copyright <strong><span>Quizzet</span></strong>. All Rights Reserved
+    </div>
+  </div>
+
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+  <script>
+    (function () {
+      var questions = [
+        {
+          question: 'Q1 : Which one of the following is correct?',
+          choices: [" A. In python, a dictionary can have two same keys with different values.",
+            " B. In python, a dictionary can have two same values with different keys.",
+            " C.  C. In python, a dictionary can have two same keys or same values but cannot have two same key-value pair.",
+            " D. In python, a dictionary can neither have two same keys nor two same values."],
+          correctAnswer: 1
+        }, {
+          question: 'Q2 : Which of the following is correct with respect to above Python code?<br><br>\
+<pre><h5>     d={"a":3,"b":7}</h5></pre>',
+          choices: [" A. a dictionary d is create D.",
+            " B. a and b are the keys of dictionary  D.",
+            " C. 3 and 7 are the values of dictionary  D.",
+            " D. All of the above."],
+          correctAnswer: 3
+        }, {
+          question: 'Q3 : What will be the output of above Python code?<br><br>\
+<pre><h5>     d1={"abc":5,"def":6,"ghi":7}\n\
+       print(d1[0])</h5></pre>',
+          choices: [" A. abc",
+            " B. 5",
+            " C. {\"abc\":5}",
+            " D. Error"],
+          correctAnswer: 3
+        },
+        {
+          question: 'Q4 : What will the above Python code do?<br><br>\
+<pre><h5>     dict={\"Phy\":94,\"Che\":70,\"Bio\":82,\"Eng\":95}\n\
+       dict.update({\"Che\":72,\"Bio\":80})</h5></pre>',
+          choices: [" A. It will create new dictionary as dict={\"Che\":72,\"Bio\":80} and old dict will be delete D.",
+            " B. It will throw an error as dictionary cannot be update D.",
+            ' C. It will simply update the dictionary as dict={"Phy":94,"Che":72,"Bio":80,"Eng":95}',
+            " D. It will not throw any error but it will not do any changes in dict"],
+          correctAnswer: 2
+        },
+        {
+          question: 'Q5 : What will be the result of above Python code?<br><br>\
+<pre><h5>     dict={"Joey":1,"Rachel":2}\n\
+       dict.update({"Phoebe":2})\n\
+       print(dict)</h5></pre>',
+          choices: [' A. {"Joey":1,"Rachel":2,"Phoebe":2}',
+            ' B. {"Joey":1,"Rachel":2}',
+            ' C. {"Joey":1,"Phoebe":2}',
+            " D. Error"],
+          correctAnswer: 0
+        },
+        {
+          question: 'Q6 : Which of the following is False regarding dictionary in Python?<br><br>\
+<pre><h5>     dict={"Joey":1,"Rachel":2}\n\
+       dict.update({"Phoebe":2})\n\
+       print(dict)</h5></pre>',
+          choices: [" A. Values of a dictionary can be string,integers or combination of both.",
+            " B. Keys of a dictionary can be string,integers or combination of both.",
+            " C. The value of a dictionary can be accessed with the help of indices.",
+            " D. None of the above"],
+          correctAnswer: 2
+        },
+        {
+          question: 'Q7 : Which of the following will delete key_value pair for key="tiger" in dictionary?<br><br>\
+        <pre><h5> dic={"lion":"wild","tiger":"wild","cat":"domestic","dog":"domestic"}</h5></pre>',
+          choices: [' A.  A. del dic["tiger"]',
+            ' B. dic["tiger"].delete()',
+            ' C. delete(di C.["tiger"])',
+            ' D. del(di C.["tiger"])'],
+          correctAnswer: 0
+        },
+        {
+          question: '8 : Which of the following will give error?<br><br>\
+<pre><h5>     Suppose dict1={"a":1,"b":2,"c":3}</h5></pre>',
+
+          choices: [" A. print(len(dict1))",
+            ' B. print(dict1.get("b"))',
+            ' C. dict1["a"]=5',
+            " D. None of these."],
+          correctAnswer: 3
+        },
+        {
+          question: 'Q9 : Which of the following Python codes will give same output if<br><br>\
+<pre><h5>     (i) dict.pop("book")\n\
+      (ii) del dict["book"]\n\
+      (iii) dict.update({"diary":1,"novel":5})\n\
+      dict={"diary":1,"book":3,"novel":5}</h5></pre>',
+          choices: [" A. i, ii, iii",
+            " B. i, ii",
+            " C. i, iii",
+            " D. ii, iii"],
+          correctAnswer: 1
+        }, {
+          question: 'Q10 : What will be the following Python code?<br><br>\
+<pre><h5>     dict1={"a":10,"b":2,"c":3}\n\
+       str1=""\n\
+       for i in dict1:\n\
+           str1=str1+str(dict1[i])+" "\n\
+           str2=str1[:-1]\n\
+       print(str2[::-1])</h5></pre>',
+          choices: [" A. 3, 2",
+            " B. 3, 2, 10",
+            " C. 3, 2, 01",
+            " D. Error"],
+          correctAnswer: 2
+        }
+
+      ];
+
+      var questionCounter = 0; //Tracks question number
+      var selections = []; //Array containing user choices
+      var quiz = $('#quiz'); //Quiz div object
+
+
+      // Display initial question
+      displayNext();
+
+
+      // Click handler for the 'next' button
+      $('#next').on('click', function (e) {
+
+        e.preventDefault();
+
+        // Suspend click listener during fade animation
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        choose();
+
+        // If no user selection, progress is stopped
+        if (isNaN(selections[questionCounter])) {
+          alert('please make a selection ');
+        } else {
+          questionCounter++;
+          displayNext();
+        }
+      });
+
+      // Click handler for the 'prev' button
+      $('#prev').on('click', function (e) {
+
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        choose();
+        questionCounter--;
+        displayNext();
+      });
+
+      // Click handler for the 'Start Over' button
+      $('#start').on('click', function (e) {
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        questionCounter = 0;
+        selections = [];
+        displayNext();
+        $('#start').hide();
+      });
+
+      // Animates buttons on hover
+      $('.button').on('mouseenter', function () {
+        $(this).addClass('active');
+      });
+      $('.button').on('mouseleave', function () {
+        $(this).removeClass('active');
+      });
+
+      // Creates and returns the div that contains the questions and 
+      // the answer selections
+      function createQuestionElement(index) {
+        var qElement = $('<div>', {
+          id: 'question'
+        });
+
+        var header = $('<h3 style="margin-bottom : 1.5rem">Question ' + (index + 1) + ' of ' + (questions.length) + ':</h3>');
+        qElement.append(header);
+
+        var question = $('<h5 style="margin-bottom : 1.5rem">').append(questions[index].question);
+        qElement.append(question);
+
+        var radioButtons = createRadios(index);
+        qElement.append(radioButtons);
+
+        return qElement;
+      }
+
+      // Creates a list of the answer choices as radio inputs
+      function createRadios(index) {
+        var radioList = $('<ul>');
+        var item;
+        var input = '';
+        for (var i = 0; i < questions[index].choices.length; i++) {
+          item = $('<li>');
+          input = '<input style="cursor : pointer;" type="radio" name="answer" value=' + i + ' />';
+          input += questions[index].choices[i];
+          item.append(input);
+          radioList.append(item);
+        }
+        return radioList;
+      }
+
+      // Reads the user selection and pushes the value to an array
+      function choose() {
+        selections[questionCounter] = +$('input[name="answer"]:checked').val();
+      }
+
+      // Displays next requested element
+      function displayNext() {
+
+        quiz.fadeOut(function () {
+          $('#question').remove();
+
+          if (questionCounter < questions.length) {
+            var nextQuestion = createQuestionElement(questionCounter);
+            quiz.append(nextQuestion).fadeIn();
+            if (!(isNaN(selections[questionCounter]))) {
+              $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
+            }
+
+            // Controls display of 'prev' button
+            if (questionCounter === 1) {
+              $('#prev').show();
+            } else if (questionCounter === 0) {
+
+              $('#prev').hide();
+              $('#next').show();
+            }
+          } else {
+            var scoreElem = displayScore();
+            quiz.append(scoreElem).fadeIn();
+            $('#next').hide();
+            $('#prev').hide();
+            $('#start').show();
+          }
+        });
+      }
+
+      // Computes score and returns a paragraph element to be displayed
+      function displayScore() {
+        var score = $('<p>', { id: 'question' });
+
+        var numCorrect = 0;
+        for (var i = 0; i < selections.length; i++) {
+          if (selections[i] === questions[i].correctAnswer) {
+            numCorrect++;
+          }
+        }
+        // showscore.innerHtml = 'You got ' + numCorrect + ' questions out of ' +questions.length + ' right!!!' + '<button> Play again</button>'
+
+        score.append('<h5>Your score ' + numCorrect + ' out of ' +
+          questions.length + '</h5>');
+        return score;
+      }
+    })();
+  </script>
+</body>
+
+</html>

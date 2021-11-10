@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Quiz</title>
+  <link type='text/css' rel='stylesheet' href='form3.css' />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans" />
+  <link href="home2_bm.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="home.html" style="text-decoration: none; color: black;">Quizzet<span>.</span></a></h1>
+      <nav id="navbar" class="navbar">
+        <ul class="navlist">
+          <li><a class="nav-link scrollto active" href="home.html"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                <path
+                  d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+              </svg>Home</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="coverview.html">C</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="cppoverview.html">C++</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="poverview.html">Python</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="joverview.html">Java</a></li>
+          <li><a class="nav-link scrollto " id="log" href="logout.php">Log-out</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="head">
+      <p style="font-size: larger;"><u> Quiz on C++ Operator Overloading</u></p>
+      <p>Total 10 questions</p>
+    </div>
+    <div id='container'>
+      
+      <br />
+      <div id='quiz'></div>
+      <div class='button' id='next'><a href='#' style="color: white;">Next</a></div>
+      <div class='button' id='prev'><a href='#' style="color: white;">Prev</a></div>
+      <div class='button' id='start'> <a href='#' style="color: white; font-size: medium;">Play again</a></div>
+
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
+  <div class="container py-4">
+    <div class="copyright" style="text-align: center; font-size: large; width: 100%;">
+      &copy; Copyright <strong><span>Quizzet</span></strong>. All Rights Reserved
+    </div>
+  </div>
+
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+  <script>
+    (function () {
+      var questions = [
+        {
+          question: 'Q1 : How can we restrict dynamic allocation of objects of a class using new?',
+          choices: [" A. By overloading new operator",
+            " B. By making an empty private new operator.",
+            " C. By making an empty private new and new[] operators",
+            " D. By overloading new operator and new[] operators"],
+          correctAnswer: 2
+        }, {
+          question: 'Q2 : Which of the following operators are overloaded by default by the compiler in every user defined classes even if user has not written?<br>1) Comparison Operator ( == )<br>2) Assignment Operator ( = ) ',
+          choices: [" A. Both 1 and 2",
+            " B. Only 1",
+            " C. Only 2",
+            " D. None of the two"],
+          correctAnswer: 2
+        }, {
+          question: 'Q3 : Which of the following operators cannot be overloaded',
+          choices: [" A. . (Member Access or Dot operator)",
+            " B. :: (Scope Resolution Operator)",
+            " C. .* (Pointer-to-member Operator )",
+            " D. All of the above"],
+          correctAnswer: 3
+        },
+        {
+          question: 'Q4 : Which of the following operators should be preferred to overload as a global function rather than a member method?',
+          choices: [" A. Postfix ++",
+            " B. Comparison Operator",
+            " C. Insertion Operator <<",
+            " D. Prefix++"],
+          correctAnswer: 2
+        },
+        {
+          question: `Q5 : What will be the output of following program? <br><br>
+<pre><h5>      #include &lt;iostream&gt; 
+        using namespace std; 
+        class Test2 { 
+          int y; 
+        }; 
+        class Test { 
+          int x; 
+          Test2 t2; 
+          public: 
+            operator Test2 ()  { return t2; } 
+            operator int () { return x; } 
+        }; 
+        void fun ( int x) { cout << "fun(int) called"; } 
+        void fun ( Test2 t ) { cout << "fun(Test 2) called"; }\n
+        int main() { 
+            Test t; 
+            fun(t); 
+            return 0; 
+        }<\pre>`,
+          choices: [" A. fun(int) called",
+            " B. fun(int) called,\nfun(Test 2) called",
+            " C. fun(Test 2) called",
+            " D. Compiler Error: Ambiguous call to fun()"],
+          correctAnswer: 3
+        },
+        {
+          question: `Q6 : Predict the output  <br><br>
+<pre><h5>        #include &lt;iostream&gt
+          using namespace std; 
+          class Point {
+          private:
+            int x, y;
+          public:
+            Point() : x(0), y(0) { }
+            Point& operator()(int dx, int dy);
+            void show() {cout << "x = " << x << ", y = " << y; }
+          };
+          Point& Point::operator()(int dx, int dy)
+          {
+              x = dx;
+              y = dy;
+              return *this;
+          }
+          int main()
+          {
+            Point pt;
+            pt(3, 2);
+            pt.show();
+            return 0;
+          }`,
+          choices: [" A. x = 2, y = 3",
+            " B. x = 3, y = 3",
+            " C. Compiler Error",
+            " D. x = 3, y = 2"],
+          correctAnswer: 3
+        },
+
+
+        {
+          question: 'Q7 : How does C++ compiler differs between overloaded postfix and prefix operators?',
+          choices: [" A. C++ doesn't allow both operators to be overloaded in a class",
+            " B. A postfix ++ has a dummy parameter",
+            " C. A prefix ++ has a dummy parameter",
+            " D. By making prefix ++ as a global function and postfix as a member function."],
+          correctAnswer: 1
+        },
+        {
+          question: "Q8 : While overloading binary operators using member function, it requires ___ argument?",
+          choices: [" A. 2",
+            " B. 1",
+            " C. 0",
+            " D. 3"],
+          correctAnswer: 1
+        },
+        {
+          question: 'Q9 : Which is the correct statement anout operator overloading in C++?.',
+          choices: [" A. Precedence of operators are changed after overlaoding",
+            " B. Only non-arithmetic operators can be overloaded",
+            " C. Only arithmetic operators can be overloaded",
+            " D. Associativity and precedence of operators does not change"],
+          correctAnswer: 3
+        }, {
+          question: 'Q10 : Which of the following operator functions cannot be global, i.e., must be a member function.',
+          choices: [" A. Converstion Operator",
+            " B. new",
+            " C. delete",
+            " D. All of the above"],
+          correctAnswer: 0
+        }];
+
+      var questionCounter = 0; //Tracks question number
+      var selections = []; //Array containing user choices
+      var quiz = $('#quiz'); //Quiz div object
+
+
+      // Display initial question
+      displayNext();
+
+
+      // Click handler for the 'next' button
+      $('#next').on('click', function (e) {
+
+        e.preventDefault();
+
+        // Suspend click listener during fade animation
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        choose();
+
+        // If no user selection, progress is stopped
+        if (isNaN(selections[questionCounter])) {
+          alert('please make a selection');
+        } else {
+          questionCounter++;
+          displayNext();
+        }
+      });
+
+      // Click handler for the 'prev' button
+      $('#prev').on('click', function (e) {
+
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        choose();
+        questionCounter--;
+        displayNext();
+      });
+
+      // Click handler for the 'Start Over' button
+      $('#start').on('click', function (e) {
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        questionCounter = 0;
+        selections = [];
+        displayNext();
+        $('#start').hide();
+      });
+
+      // Animates buttons on hover
+      $('.button').on('mouseenter', function () {
+        $(this).addClass('active');
+      });
+      $('.button').on('mouseleave', function () {
+        $(this).removeClass('active');
+      });
+
+      // Creates and returns the div that contains the questions and 
+      // the answer selections
+      function createQuestionElement(index) {
+        var qElement = $('<div>', {
+          id: 'question'
+        });
+
+        var header = $('<h3 style="margin-bottom : 1.5rem">Question ' + (index + 1) + ' of ' + (questions.length) + ':</h3>');
+        qElement.append(header);
+
+        var question = $('<h5 style="margin-bottom : 1.5rem">').append(questions[index].question);
+        qElement.append(question);
+
+        var radioButtons = createRadios(index);
+        qElement.append(radioButtons);
+
+        return qElement;
+      }
+
+      // Creates a list of the answer choices as radio inputs
+      function createRadios(index) {
+        var radioList = $('<ul>');
+        var item;
+        var input = '';
+        for (var i = 0; i < questions[index].choices.length; i++) {
+          item = $('<li>');
+          input = '<input style="cursor : pointer;" type="radio" name="answer" value=' + i + ' />';
+          input += questions[index].choices[i];
+          item.append(input);
+          radioList.append(item);
+        }
+        return radioList;
+      }
+
+      // Reads the user selection and pushes the value to an array
+      function choose() {
+        selections[questionCounter] = +$('input[name="answer"]:checked').val();
+      }
+
+      // Displays next requested element
+      function displayNext() {
+
+        quiz.fadeOut(function () {
+          $('#question').remove();
+
+          if (questionCounter < questions.length) {
+            var nextQuestion = createQuestionElement(questionCounter);
+            quiz.append(nextQuestion).fadeIn();
+            if (!(isNaN(selections[questionCounter]))) {
+              $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
+            }
+
+            // Controls display of 'prev' button
+            if (questionCounter === 1) {
+              $('#prev').show();
+            } else if (questionCounter === 0) {
+
+              $('#prev').hide();
+              $('#next').show();
+            }
+          } else {
+            var scoreElem = displayScore();
+            quiz.append(scoreElem).fadeIn();
+            $('#next').hide();
+            $('#prev').hide();
+            $('#start').show();
+          }
+        });
+      }
+
+      // Computes score and returns a paragraph element to be displayed
+      function displayScore() {
+        var score = $('<p>', { id: 'question' });
+
+        var numCorrect = 0;
+        for (var i = 0; i < selections.length; i++) {
+          if (selections[i] === questions[i].correctAnswer) {
+            numCorrect++;
+          }
+        }
+        // showscore.innerHtml = 'You got ' + numCorrect + ' questions out of ' +questions.length + ' right!!!' + '<button> Play again</button>'
+
+        score.append('<h5>Your score ' + numCorrect + ' out of ' +
+          questions.length + '</h5>');
+        return score;
+      }
+    })();
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C Quiz </title>
+  <link type='text/css' rel='stylesheet' href='form3.css' />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans" />
+  <link href="home2_bm.css" rel="stylesheet">
+  
+  
+</head>
+
+<body>
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="home.html" style="text-decoration: none; color: black;">Quizzet<span>.</span></a></h1>
+      <nav id="navbar" class="navbar">
+        <ul class="navlist">
+          <li><a class="nav-link scrollto active" href="home.html"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                <path
+                  d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+              </svg>Home</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="coverview.html">C</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="cppoverview.html">C++</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="poverview.html">Python</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="joverview.html">Java</a></li>
+          <li><a class="nav-link scrollto " id="log" href="logout.php">Log-out</a></li>
+        </ul>
+      
+      </nav>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="head">
+      <p style="font-size: larger;"><u> Quiz on C Array</u></p>
+      <p>Total 10 questions</p>
+    </div>
+    <div id='container'>
+      <div id='title'>
+
+      </div>
+      <br />
+      <div id='quiz'></div>
+      <div class='button' id='next'><a href='#' style="color: white;">Next</a></div>
+      <div class='button' id='prev'><a href='#' style="color: white;">Prev</a></div>
+      <div class='button' id='start'> <a href='#' style="color: white; font-size: medium;">Play again</a></div>
+      <!-- <button class='btn' id='next' style="background-color: blue; color: white;">Next</a></button>
+    		<button class='btn' id='prev' style="background-color: blue; color: white;">Prev</a></button>
+    		<button class='btn' id='start' style="background-color: green; color: white;"> Play again</a></button> -->
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
+  <div class="container py-4">
+    <div class="copyright" style="text-align: center; font-size: large; width: 100%;">
+      &copy; Copyright <strong><span>Quizzet</span></strong>. All Rights Reserved
+    </div>
+  </div>
+
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+  <script>
+    (function () {
+      var questions = [
+        {
+          question: "Q1 : What is Array?",
+          choices: [" A. Collection of different type of elements", " B. Collection of similar type of elements", " C. None of the above", " D. Both a and b"],
+          correctAnswer: 1
+        }, {
+          question: "Q2 : What are the Types of Arrays?",
+          choices: [" A. int, float, char, double", " B. struct, enum", " C. long", " D. All the above"],
+          correctAnswer: 3
+        }, {
+          question: "Q3 : Let x be an array. Which of the following is illegal ?",
+          choices: [" A. x++", " B. x+1", " C. x[1]", " D. none of these"],
+          correctAnswer: 0
+        }, {
+          question: "Q4 : Size of the array need not be specified, when ",
+          choices: [" A. It is a declaratrion", " B. Initialization is a part of definition", " C. It is a formal parameter", " D. All the above"],
+          correctAnswer: 1
+        }, {
+          question: "Q5 : The maximum number of dimension an array can have in C is  ",
+          choices: [" A. compiler dependent", " B. 100", " C. 1000", " D. 10"],
+          correctAnswer: 0
+        }, {
+          question: "Q6 : Syntax of accessing the seventh element ",
+          choices: [" A. a{7}", " B. a(7)", ' C. a"7"', " D. a[7]"],
+          correctAnswer: 3
+        }, {
+          question: "Q7 : What is the value of a[4]?<br><br><pre><h5>   int a[5]={1,2,4,1,0}</h5></pre>",
+          choices: [" A. 1", " B. 10", ' C. 0', " D. Error"],
+          correctAnswer: 2
+        }, {
+          question: "Q8 : If a two dimensional array is used as a formal parameter, then ",
+          choices: [" A. the first subscript must be left empty", " B. the first (row) subscript may be left empty", ' C. both the subscripts must be left empty', " D. both the subscripts may be left empty"],
+          correctAnswer: 1
+        }, {
+          question: "Q9 : If storage class is missing in the array definition, by default it will be taken to be ",
+          choices: [" A. either automatic or external depending on the place of occurrence", " B. static", ' C. automatic', " D. external"],
+          correctAnswer: 0
+        }, {
+          question: "Q10 : The information about an array used in a program will be sorted in ",
+          choices: [" A. Static table", " B. Dope vector", ' C. Activate Record', " D. Both a and c"],
+          correctAnswer: 1
+        }
+      ];
+
+      var questionCounter = 0;
+      var selections = [];
+      var quiz = $('#quiz');
+
+      displayNext();
+
+
+      // Click handler for the 'next' button
+      $('#next').on('click', function (e) {
+
+        e.preventDefault();
+
+        // Suspend click listener during fade animation
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        choose();
+
+        // If no user selection, progress is stopped
+        if (isNaN(selections[questionCounter])) {
+          alert('please make a selection');
+        } else {
+          questionCounter++;
+          displayNext();
+        }
+      });
+
+      // Click handler for the 'prev' button
+      $('#prev').on('click', function (e) {
+
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        choose();
+        questionCounter--;
+        displayNext();
+      });
+
+      // Click handler for the 'Start Over' button
+      $('#start').on('click', function (e) {
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        questionCounter = 0;
+        selections = [];
+        displayNext();
+        $('#start').hide();
+      });
+
+      // Animates buttons on hover
+      $('.button').on('mouseenter', function () {
+        $(this).addClass('active');
+      });
+      $('.button').on('mouseleave', function () {
+        $(this).removeClass('active');
+      });
+
+      // Creates and returns the div that contains the questions and the answer selections
+      function createQuestionElement(index) {
+        var qElement = $('<div>', {
+          id: 'question'
+        });
+
+        var header = $('<h3 style="margin-bottom : 1.5rem">Question ' + (index + 1) + ' of ' + (questions.length) + ':</h3>');
+        qElement.append(header);
+
+        var question = $('<h5 style="margin-bottom : 1.5rem">').append(questions[index].question);
+        qElement.append(question);
+
+        var radioButtons = createRadios(index);
+        qElement.append(radioButtons);
+
+        return qElement;
+      }
+
+      // Creates a list of the answer choices as radio inputs
+      function createRadios(index) {
+        var radioList = $('<ul>');
+        var item;
+        var input = '';
+        for (var i = 0; i < questions[index].choices.length; i++) {
+          item = $('<li>');
+          input = '<input style="cursor : pointer;" type="radio" name="answer" value=' + i + ' />';
+          input += questions[index].choices[i];
+          item.append(input);
+          radioList.append(item);
+        }
+        return radioList;
+      }
+
+      // Reads the user selection and pushes the value to an array
+      function choose() {
+        selections[questionCounter] = +$('input[name="answer"]:checked').val();
+      }
+
+      // Displays next requested element
+      function displayNext() {
+
+        quiz.fadeOut(function () {
+          $('#question').remove();
+
+          if (questionCounter < questions.length) {
+            var nextQuestion = createQuestionElement(questionCounter);
+            quiz.append(nextQuestion).fadeIn();
+            if (!(isNaN(selections[questionCounter]))) {
+              $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
+            }
+
+            // Controls display of 'prev' button
+            if (questionCounter === 1) {
+              $('#prev').show();
+            } else if (questionCounter === 0) {
+              $('#prev').hide();
+              $('#next').show();
+            }
+          } else {
+            var scoreElem = displayScore();
+            quiz.append(scoreElem).fadeIn();
+            $('#next').hide();
+            $('#prev').hide();
+            $('#start').show();
+          }
+        });
+      }
+
+      // Computes score and returns a paragraph element to be displayed
+      function displayScore() {
+        var score = $('<p>', { id: 'question' });
+
+        var numCorrect = 0;
+        for (var i = 0; i < selections.length; i++) {
+          if (selections[i] === questions[i].correctAnswer) {
+            numCorrect++;
+          }
+        }
+        // showscore.innerHtml = 'You got ' + numCorrect + ' questions out of ' + questions.length + ' right!!!' + '<button> Play again</button>'
+
+        score.append('Your score ' + numCorrect + ' out of ' + questions.length);
+        return score;
+      }
+    })();
+  </script>
+</body>
+
+</html>

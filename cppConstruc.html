@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>C++ Quiz</title>
+  <link type='text/css' rel='stylesheet' href='form3.css' />
+  <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Open Sans" />
+  <link href="home2_bm.css" rel="stylesheet">
+</head>
+
+<body>
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+      <h1 class="logo"><a href="home.html" style="text-decoration: none; color: black;">Quizzet<span>.</span></a></h1>
+      <nav id="navbar" class="navbar">
+        <ul class="navlist">
+          <li><a class="nav-link scrollto active" href="home.html"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                <path
+                  d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+              </svg>Home</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="coverview.html">C</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="cppoverview.html">C++</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="poverview.html">Python</a></li>
+          <li><a class="nav-link scrollto " id="lang" href="joverview.html">Java</a></li>
+          <li><a class="nav-link scrollto " id="log" href="logout.php">Log-out</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <div class="main">
+    <div class="head">
+      <p style="font-size: larger;"><u> Quiz on C++ Constructors</u></p>
+      <p>Total 12 questions</p>
+    </div>
+    <div id='container'>
+      <div id='title'>
+
+      </div>
+      <br />
+      <div id='quiz'></div>
+      <div class='button' id='next'><a href='#' style="color: white;">Next</a></div>
+      <div class='button' id='prev'><a href='#' style="color: white;">Prev</a></div>
+      <div class='button' id='start'> <a href='#' style="color: white; font-size: medium;">Play again</a></div>
+     
+    </div>
+    <br><br><br><br><br><br><br><br><br><br>
+  </div>
+  <div class="container py-4">
+    <div class="copyright" style="text-align: center; font-size: large; width: 100%;">
+      &copy; Copyright <strong><span>Quizzet</span></strong>. All Rights Reserved
+    </div>
+  </div>
+
+  <script type='text/javascript' src='https://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
+ 
+  <script>
+    (function () {
+      var questions = [
+        {
+          question: 'Q1 : Which of the followings is/are automatically added to every class, if we do not write our own.',
+          choices: [" A. Copy Constructor",
+            " B. Assignment Operator",
+            " C .A constructor without any parameter",
+            " D. All of the above"],
+          correctAnswer: 3
+        }, {
+          question: 'Q2 : When a copy constructor may be called?',
+          choices: [" A. When an object of the class is returned by value.",
+            " B. When an object of the class is passed (to a function) by value as an argument.",
+            " C. When an object is constructed based on another object of the same class.",
+            " D. All of the above"],
+          correctAnswer: 3
+        }, {
+          question: 'Q3 : What is the output of following program?<br><br>\
+<pre><h5>         class Point {\n\
+              Point() {\n\
+                cout << "Constructor called"; }\n\
+          };\n\
+          \n\
+          int main()\n\
+          {\n\
+            Point t1;\n\
+            return 0;\n\
+          }</pre>',
+          choices: [" A. None",
+            " B. Runtime Error",
+            " C. Compiler Error",
+            " D. Constructor called"],
+          correctAnswer: 2
+        },
+        {
+          question: 'Q4 : What is the output of following program?<br><br>\
+        <pre><h5>         class Test\n\
+          {\n\
+            public \n\
+                  Test() { cout << "Hello from Test() "; }\n\
+          } a;\n\
+          int main()\n\
+          {\n\
+              cout << "Main Started ";\n\
+              return 0;\n\
+          }</pre>',
+          choices: [" A. Main Started",
+            " B. Hello from Test() Main Started",
+            " C. Main Started Hello from Test()",
+            " D. Compiler Error: Global objects are not allowed"],
+          correctAnswer: 1
+        },
+        {
+          question: 'Q5 : Predict the output of following program.<br><br>\
+<pre><h5>         class Point {\n\
+                int x;\n\
+          public \n\
+              Point(int x) { this->x = x; }\n\
+              Point(const Point p) { x = p.x;}\n\
+              int getX() { return x; }\n\
+          };\n\
+          int main()\n\
+          {\n\
+            Point p1(10);\n\
+            Point p2 = p1;\n\
+            cout << p2.getX();\n\
+            return 0;\n\
+          }</pre>',
+          choices: [" A. 10",
+            " B. Compiler Error: p must be passed by reference",
+            " C.Garbage value",
+            " D. None of the above"],
+          correctAnswer: 1
+        },
+        {
+          question: 'Q6 : Which of the following is true about constructors.<br><br>\
+        <pre><h5>   1) They cannot be virtual.<br>\
+    2) They cannot be private.<br>\
+    3) They are automatically called by new operator.</pre>',
+          choices: [" A. Only 1 and 3",
+            " B. All 1, 2, and 3",
+            " C. Only 1 and 2",
+            " D. Only 2 and 3"],
+          correctAnswer: 0
+        },
+        {
+          question: 'Q7 : We must use initializer list in a constructor when ',
+          choices: [" A. There is a reference variable in class",
+            " B. There is a constant variable in class",
+            " C. There is an object of another class. And the other class doesn't have default constructor.",
+            " D. All of the above"],
+          correctAnswer: 3
+        },
+        {
+          question: "Q8 : Constructors have _____ return type.",
+          choices: [" A. void",
+            " B.  char",
+            " C.  int",
+            " D. no"],
+          correctAnswer: 3
+        },
+        {
+          question: "Q9 : What is the right way to declare a copy constructor of a class if the name of the class is MyClass?",
+          choices: [" A. MyClass (constant MyClass *arg)",
+            " B. MyClass (constant MyClass &arg)",
+            " C. MyClass (MyClass arg)",
+            " D. MyClass (MyClass *arg)"],
+          correctAnswer: 1
+        }, {
+          question: "Q10 : Like constructors, can there be more than one destructors in a class?",
+          choices: [" A. Yes",
+            " B. No"],
+          correctAnswer: 1
+        }, {
+          question: `Q11 : Predict the output of following program.<br><br>\
+        <pre><h5>         class Test\n\
+          {\n\
+          publi \n\
+            Test();\n\
+          }; 
+          Test::Test()  {\n\
+               cout << " Constructor Called. ";\n\
+           }\n\
+          void fun() {\n\
+              static Test t1;\n\
+          }\n\n\
+          int main() {\n\t\
+            cout << " Before fun() called. ";\n\
+            fun();\n\
+            fun();\n\
+            cout << " After fun() called. "; \n\ 
+            return 0;\n\
+          }</pre>`,
+          choices: [" A. Before fun() called. Constructor Called. After fun() called.",
+            " B. Before fun() called. Constructor Called. Constructor Called. After fun() called.",
+            ' C. Constructor Called. Before fun() called. After fun() called.',
+            " D. Constructor Called. Constructor Called. After fun() called.Before fun() called."],
+          correctAnswer: 0
+        }, {
+          question: 'Q12 : What will be the output of following program.<br><br>\
+        <pre><h5>         int i;\n\
+          class A\n\
+          {\n\
+          publi \n\
+              ~A()\n\
+              {\n\
+                  i=10;\n\
+              }\n\
+          };\n\n\
+          int foo()\n\
+          {\n\
+              i=3;\n\
+              A ob;\n\
+              return i;\n\
+          }\n\
+          int main()\n\
+          {\n\
+              cout << foo() << endl;\n\
+              return 0;\n\
+          }',
+          choices: [" A. 0",
+            " B. 3",
+            ' C. 10',
+            " D. None of the above"],
+          correctAnswer: 1
+        }];
+
+      var questionCounter = 0; //Tracks question number
+      var selections = []; //Array containing user choices
+      var quiz = $('#quiz'); //Quiz div object
+
+
+      // Display initial question
+      displayNext();
+
+
+      // Click handler for the 'next' button
+      $('#next').on('click', function (e) {
+
+        e.preventDefault();
+
+        // Suspend click listener during fade animation
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        choose();
+
+        // If no user selection, progress is stopped
+        if (isNaN(selections[questionCounter])) {
+          alert('please make a selection');
+        } else {
+          questionCounter++;
+          displayNext();
+        }
+      });
+
+      // Click handler for the 'prev' button
+      $('#prev').on('click', function (e) {
+
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        choose();
+        questionCounter--;
+        displayNext();
+      });
+
+      // Click handler for the 'Start Over' button
+      $('#start').on('click', function (e) {
+        e.preventDefault();
+
+        if (quiz.is(':animated')) {
+          return false;
+        }
+        questionCounter = 0;
+        selections = [];
+        displayNext();
+        $('#start').hide();
+      });
+
+      // Animates buttons on hover
+      $('.button').on('mouseenter', function () {
+        $(this).addClass('active');
+      });
+      $('.button').on('mouseleave', function () {
+        $(this).removeClass('active');
+      });
+
+      // Creates and returns the div that contains the questions and 
+      // the answer selections
+      function createQuestionElement(index) {
+        var qElement = $('<div>', {
+          id: 'question'
+        });
+
+        var header = $('<h3 style="margin-bottom : 1.5rem">Question ' + (index + 1) + ' of ' + (questions.length) + ':</h3>');
+        qElement.append(header);
+
+        var question = $('<h5 style="margin-bottom : 1.5rem">').append(questions[index].question);
+        qElement.append(question);
+
+        var radioButtons = createRadios(index);
+        qElement.append(radioButtons);
+
+        return qElement;
+      }
+
+      // Creates a list of the answer choices as radio inputs
+      function createRadios(index) {
+        var radioList = $('<ul>');
+        var item;
+        var input = '';
+        for (var i = 0; i < questions[index].choices.length; i++) {
+          item = $('<li>');
+          input = '<input style="cursor : pointer;" type="radio" name="answer" value=' + i + ' />';
+          input += questions[index].choices[i];
+          item.append(input);
+          radioList.append(item);
+        }
+        return radioList;
+      }
+
+      // Reads the user selection and pushes the value to an array
+      function choose() {
+        selections[questionCounter] = +$('input[name="answer"]:checked').val();
+      }
+
+      // Displays next requested element
+      function displayNext() {
+
+        quiz.fadeOut(function () {
+          $('#question').remove();
+
+          if (questionCounter < questions.length) {
+            var nextQuestion = createQuestionElement(questionCounter);
+            quiz.append(nextQuestion).fadeIn();
+            if (!(isNaN(selections[questionCounter]))) {
+              $('input[value=' + selections[questionCounter] + ']').prop('checked', true);
+            }
+
+            // Controls display of 'prev' button
+            if (questionCounter === 1) {
+              $('#prev').show();
+            } else if (questionCounter === 0) {
+
+              $('#prev').hide();
+              $('#next').show();
+            }
+          } else {
+            var scoreElem = displayScore();
+            quiz.append(scoreElem).fadeIn();
+            $('#next').hide();
+            $('#prev').hide();
+            $('#start').show();
+          }
+        });
+      }
+
+      // Computes score and returns a paragraph element to be displayed
+      function displayScore() {
+        var score = $('<p>', { id: 'question' });
+
+        var numCorrect = 0;
+        for (var i = 0; i < selections.length; i++) {
+          if (selections[i] === questions[i].correctAnswer) {
+            numCorrect++;
+          }
+        }
+        // showscore.innerHtml = 'You got ' + numCorrect + ' questions out of ' +questions.length + ' right!!!' + '<button> Play again</button>'
+
+        score.append('<h5>Your score ' + numCorrect + ' out of ' +
+          questions.length + '</h5>');
+        return score;
+      }
+    })();
+  </script>
+</body>
+
+</html>

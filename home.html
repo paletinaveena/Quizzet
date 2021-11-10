@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" >
+  <title>Quizzet a quiz website</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Roboto:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="home2_bm.css" rel="stylesheet">
+  <link href="home2.css" rel="stylesheet">
+  <style>
+    .d-flex a{
+      margin: 2%;
+    }
+    @media(max-width: 500px){
+      .d-flex{
+        display: flex;
+        flex-direction: column;
+      }
+      .d-flex a{
+        width: fit-content;
+      margin: 2%;
+    }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <header id="header" class="d-flex align-items-center">
+    <div class="container d-flex align-items-center justify-content-between">
+
+      <h1 class="logo"><a href="home.html"><span>Quizzet.</span></a></h1>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <!-- <li><a class="nav-link scrollto active" href="#hero">Home</a></li> -->
+          <li><a class="nav-link scrollto" href="#topics">Quizzes</a></li>
+          
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container" data-aos="zoom-out" data-aos-delay="100">
+      <h1 >Welcome to <span>Quizzet</span></h1>
+      <h2>Attempt quizzes to enhance your programming knowlenge </h2>
+      <div class="d-flex">
+        <a href="#topics" class="btn-get-started scrollto">Get Started</a>
+        <a href="logout.php" class="btn-get-started" style="margin-left: 1%;">Log-out</a>
+      </div>
+    </div>
+  </section>
+
+  <main id="main">
+    <section id="featured-services" class="featured-services">
+      <div class="container" data-aos="fade-up">
+
+        <div class="row" >
+          
+            <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0" >
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="100" style="text-align: justify;">
+              
+              <h3 class="title"><a href="">What is Programming?</a></h3>
+              <p class="description">Programming is a way to instruct the computer to perform various tasks.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0"  >
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="200">
+              
+              <h3 class="title"><a href="">Why Programming?</a></h3>
+              <p class="description">We use computer programming to harness the computing power.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="300">
+              
+              <h4 class="title"><a href="">Coding Languages</a></h4>
+              <p class="description">Comprising a set of strings that produce various kinds of machine output.</p>
+            </div>
+          </div>
+
+          <div class="col-md-6 col-lg-3 d-flex align-items-stretch mb-5 mb-lg-0">
+            <div class="icon-box" data-aos="fade-up" data-aos-delay="400">
+              
+              <h4 class="title"><a href=""> Examples</a></h4>
+              <p class="description"> Some of the popular Programming languages are Python, C, C++, Java, Php etc.</p>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ------- topics Section ------- -->
+
+     <section id="topics" class="services" style="background-color: #f6f9fe; box-shadow: 0 0 0;">
+        <div class="container" data-aos="fade-up">
+  
+          <div class="section-title" style="margin-top: 5%;">
+            <h2 style="color: blue; text-align: center;">Quizzes</h2>
+            <h3 style="text-align: center;">Choose a <span >language</span></h3>
+            <p><i> “First, solve the problem. Then, write the code.” – John Johnson</i></p>
+          </div>
+  
+          <div class="row">
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <div class="icon"><img src="https://img.icons8.com/color/50/000000/c-programming.png"/></div>
+                <h4><a href="coverview.html">C programming</a></h4>
+                <p>C is a powerful general-purpose programming language.</p>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-md-0" data-aos="zoom-in" data-aos-delay="200">
+              <div class="icon-box">
+                <div class="icon"><img src="https://img.icons8.com/color/48/000000/c-plus-plus-logo.png"/></div>
+                <h4><a href="cppoverview.html">C++ programming</a></h4>
+                <p>C++ is created as an extension of the C programming language, or "C with Classes".</p>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4 mt-lg-0" data-aos="zoom-in" data-aos-delay="300">
+              <div class="icon-box">
+                <div class="icon"><img src="https://img.icons8.com/color/48/000000/python--v1.png"/></div>
+                <h4><a href="poverview.html">Python programming</a></h4>
+                <p>Python is an interpreted high-level general-purpose programming language</p>
+              </div>
+            </div>
+  
+            <div class="col-lg-4 col-md-6 d-flex align-items-stretch mt-4" data-aos="zoom-in" data-aos-delay="100">
+              <div class="icon-box">
+                <div class="icon"><img src="https://img.icons8.com/color/48/000000/java-coffee-cup-logo--v1.png"/></div>
+                <h4><a href="joverview.html">Java programming</a></h4>
+                <p>Java is a high-level, class-based, object-oriented programming language.</p>
+              </div>
+            </div>   
+          </div>
+        </div>
+      </section>
+
+  <!-- -----------Footer ------------ -->
+    <div class="footer-top">
+      <div class="container py-4" style="justify-content: center; text-align: center;">
+        &copy; Copyright <strong><span>Quizzet</span></strong>. All Rights Reserved
+     </div>
+    </div>
+</body>
+
+</html>

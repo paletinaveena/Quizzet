@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Language overview</title>
+  <link rel="stylesheet" href="overview.css">
+  <link href="home2_bm.css" rel="stylesheet">
+  <style>
+    @media(max-width : 900px){
+      .image{
+        width: auto;
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <header id="header" class="d-flex align-items-center fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      
+      <h1 class="logo"><a href="home.html" style="text-decoration: none;">Quizzet<span>.</span></a></h1>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a class="nav-link scrollto" href="home.html"><svg xmlns="http://www.w3.org/2000/svg" width="20"
+                height="20" fill="currentColor" class="bi bi-house-door" viewBox="0 0 16 16">
+                <path
+                  d="M8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4.5a.5.5 0 0 0 .5-.5v-4h2v4a.5.5 0 0 0 .5.5H14a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146zM2.5 14V7.707l5.5-5.5 5.5 5.5V14H10v-4a.5.5 0 0 0-.5-.5h-3a.5.5 0 0 0-.5.5v4H2.5z" />
+              </svg>Home</a></li>
+          <li><a class="nav-link scrollto" href="cppoverview.html">C++</a></li>
+          <li><a class="nav-link scrollto" href="poverview.html">Python</a></li>
+          <li><a class="nav-link scrollto" href="joverview.html">Java</a></li>
+          <li><a class="nav-link scrollto" href="logout.php">Log-out</a></li>
+        </ul>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" width="46" height="16" fill="currentColor" class="bi bi-list mobile-nav-toggle" viewBox="0 0 20 16">
+          <path fill-rule="evenodd" d="M2.5 12a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5zm0-4a.5.5 0 0 1 .5-.5h10a.5.5 0 0 1 0 1H3a.5.5 0 0 1-.5-.5z"/>
+        </svg>
+      </nav>
+    </div>
+  </header>
+  <!-- Sidenav -->
+  <nav id="overview">
+    <div id="sidenav-1" class="sidenav">
+      <ul class="sidenav-item">
+
+        <a><span onclick="openNav()"><u> Topics </u></span></a>
+        <div class="sidenav-collapse">
+          <div class="topics">
+            <li><a href="cbasic.html">Basic I/O</a></li>
+            <li><a href="cDataVar.html">Data type and variables</a></li>
+            <li><a href="cOperator.html">Operators</a></li>
+            <li><a href="cCond_loop.html">Conditional statement and loops</a></li>
+            <li><a href="cFunc.html">Function</a></li>
+            <li><a href="cArray.html">Array</a></li>
+            <li><a href="cPointer.html">Pointer</a></li>
+            <li><a href="cStuct.html">Stucture and union</a></li>
+            <li><a href="cFile-handaling.html">File-handaling</a></li>
+            <li><a href="cDynamic.html">Dynamic memomy allocation</a></li>
+          </div>
+        </div>
+        </li>
+
+
+      </ul>
+    </div>
+    <div id="paragragh">
+      <h1 style="color: grey; text-align: center; font-size: xx-large;">C Language - Overview</h1>
+      <hr>
+      <p>C is a general-purpose, high-level language that was originally developed by Dennis M. Ritchie to develop the
+        UNIX operating system at Bell Labs. C was originally first implemented on the DEC PDP-11 computer in 1972.</p>
+      <p>In 1978, Brian Kernighan and Dennis Ritchie produced the first publicly available description of C, now known
+        as the K&R standard.</p>
+      <div class="image">
+        <picture>
+          <img src="c2.jpeg" alt="Dennis Ritchie" width="240" height="250">
+        <figcaption class="caption">Dennis M. Ritchie</figcaption>
+      </picture>
+      <picture >
+        <img src="c4.jpg" alt="Brian Kernighan" width="240" height="250">
+        <figcaption class="caption">Brian Kernighan</figcaption>
+      </picture>
+      </div>
+      <h3>Why to Learn C Programming?</h3>
+      <p>C programming language is a MUST for students and working professionals to become a great Software Engineer
+        specially when they are working in Software Development Domain. I will list down some of the key advantages of
+        learning C Programming:</p>
+      <ul>
+        <li>Easy to learn</li>
+
+        <li>Structured language.</li>
+
+        <li>It produces efficient programs.</li>
+
+        <li>It can handle low-level activities.</li>
+
+        <li>It can be compiled on a variety of computer platforms.</li>
+      </ul>
+      <h3>Facts about C</h3>
+      <li>C was invented to write an operating system called UNIX.</li>
+
+      <li>C is a successor of B language which was introduced around the early 1970s.</li>
+
+      <li>The language was formalized in 1988 by the American National Standard Institute (ANSI).</li>
+
+      <li>The UNIX OS was totally written in C.</li>
+      <br>
+      <div class="image">
+        <img src="c.png" alt="c" style="width: 400px;">
+      </div>
+      <br>
+      <p>Today C is the most widely used and popular System Programming Language.</p>
+      <p>Most of the state-of-the-art software have been implemented using C.</p>
+      
+      <br><br><br><br><br>
+
+
+      </div>
+      </div>
+    </div>
+  </nav>
+  <div class="container py-4">
+    <div class="copyright" style="text-align: center; ">
+      &copy; Copyright <strong><span>Quizzet</span></strong>. All Rights Reserved
+    </div>
+    <script>
+      function openNav() {
+        document.getElementById("topics").style.width = "100";
+        document.getElementById("topics").style.minHeight = "100";
+        // document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+      }
+
+      function closeNav() {
+        document.getElementById("topics").style.width = "0";
+        document.getElementById("topics").style.height = "0";
+        // document.body.style.backgroundColor = "white";
+      }
+    </script>
+    
+
+</body>
+</html>
+
+
+
